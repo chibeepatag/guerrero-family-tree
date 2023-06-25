@@ -1,6 +1,6 @@
 class MembersController < ApplicationController
   before_action :set_member, only: %i[ show edit update destroy ]
-
+  HEAD_OF_FAMILY = 46
   # GET /members or /members.json
   def index
     @members = Member.all
@@ -8,7 +8,7 @@ class MembersController < ApplicationController
 
   def tree
     @members = Member.all
-    head = Member.find 1
+    head = Member.find HEAD_OF_FAMILY
     @nodes = @members - [head]
   end
 
