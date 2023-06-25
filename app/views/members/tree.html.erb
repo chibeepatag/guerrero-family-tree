@@ -1,0 +1,26 @@
+tree.html.erb
+<div id="container"></div>
+<script>
+  var data = {
+  nodes: [<%= render partial: "member_json", collection: @members %>],
+  edges: [<%= render partial: "edge", collection: @nodes %>]
+  };
+
+  anychart.onDocumentLoad(function () {
+    var chart = anychart.graph(data);
+    chart.nodes().labels().enabled(true);
+    chart.nodes().labels().format("{%name}");
+
+// configure tooltips of nodes
+chart.nodes().tooltip().useHtml(true);
+chart.nodes().tooltip().format("<span style='font-weight:bold'>{%name}</span><br>Birth: {%yob}<br>Death: {%yod}");
+// set the container id
+chart.container("container");
+
+// initiate drawing the chart
+chart.draw();    
+  })
+// create data
+
+
+</script>
