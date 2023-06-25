@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_25_054952) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_25_102458) do
   create_table "members", charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
     t.integer "birth"
@@ -21,6 +21,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_25_054952) do
     t.bigint "spouse_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "branch", limit: 100
     t.index ["parent_id"], name: "index_members_on_parent_id"
     t.index ["spouse_id"], name: "index_members_on_spouse_id"
   end
