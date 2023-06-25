@@ -7,6 +7,10 @@ module MembersHelper
     connection(member).nil? ? 'null' : connection(member).id
   end
 
+  def yob member
+    member.birth.nil? ? 'null' : member.birth
+  end
+  
   def yod member
     member.death.nil? ? ' ' : member.death
   end
@@ -16,6 +20,14 @@ module MembersHelper
   end
 
   def color member
-    member.in_law ? "#ffa000" : "#005EFF"
+    return "#e3d5ab" if member.in_law
+    return "#795548" if member.branch.nil?
+    {
+    "Luis" => "#fbfdaa",
+    "Rosa"=> "#ffc9de",
+    "Fernando"=> "#c1f0b2",
+    "Alfredo"=> "#b2e4f0",
+    "Jose" => "#fdd97c",
+    "Manuel"=> "#beabe3"}[member.branch]
   end
 end
