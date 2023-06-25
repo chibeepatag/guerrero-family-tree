@@ -1,5 +1,5 @@
 tree.html.erb
-<div id="container"></div>
+<div id="container" style="width: 100%; height: 1000px;"></div>
 <script>
   var data = {
   nodes: [<%= render partial: "member_json", collection: @members %>],
@@ -13,7 +13,7 @@ tree.html.erb
 
 // configure tooltips of nodes
 chart.nodes().tooltip().useHtml(true);
-chart.nodes().tooltip().format("<span style='font-weight:bold'>{%name}</span><br>Birth: {%yob}<br>Death: {%yod}");
+chart.nodes().tooltip().format("<span style='font-weight:bold'>{%name}</span><br>{%yob}-{%yod}");
 // set the container id
 chart.container("container");
 
