@@ -4,12 +4,12 @@ class MembersController < ApplicationController
   # GET /members or /members.json
   def index
     @members = Member.all
-    @nodes = Member.where.not(id: 1)
   end
 
   def tree
     @members = Member.all
-    @nodes = Member.where.not(id: 1)
+    head = Member.find 1
+    @nodes = @members - [head]
   end
 
   # GET /members/1 or /members/1.json
