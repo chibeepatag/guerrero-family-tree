@@ -1,1 +1,1 @@
-{"id": <%=member_json.id%>, "name": "<%=member_json.name%>", "yob": <%=yob(member_json)%>, "yod": "<%=yod(member_json)%>", "nickname": "<%=member_json.nicknames%>", "in_law": <%=member_json.in_law%>, "normal":{"shape": "<%=shape(member_json)%>", "fill": "<%=color(member_json)%>"}},
+{"id": <%=member_json.id%>, "pids": [<%=member_json.spouse_id%>], "mid": <%=mother_id(member_json) %>, "fid": <%=father_id(member_json)%>, "name": "<%=member_json.name%>"},

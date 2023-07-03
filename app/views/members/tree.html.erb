@@ -1,26 +1,9 @@
-tree.html.erb
-<div id="container" style="width: 100%; height: 1000px;"></div>
+<div style="width:100%; height:700px;" id="tree"></div>
 <script>
-  var data = {
-  nodes: [<%= render partial: "member_json", collection: @members %>],
-  edges: [<%= render partial: "edge", collection: @nodes %>]
-  };
-
-  anychart.onDocumentLoad(function () {
-    var chart = anychart.graph(data);
-    chart.nodes().labels().enabled(true);
-    chart.nodes().labels().format("{%name}");
-
-// configure tooltips of nodes
-chart.nodes().tooltip().useHtml(true);
-chart.nodes().tooltip().format("<span style='font-weight:bold'>{%name}</span><br>{%yob}-{%yod}");
-// set the container id
-chart.container("container");
-
-// initiate drawing the chart
-chart.draw();    
-  })
-// create data
-
-
-</script>
+   var family = new FamilyTree(document.getElementById("tree"), {
+        nodeBinding: {
+            field_0: "name"
+        },
+        nodes: [<%= render partial: "member_json", collection: @members %>]
+    });
+</script> 

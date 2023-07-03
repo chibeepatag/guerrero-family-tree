@@ -7,9 +7,10 @@ class MembersController < ApplicationController
   end
 
   def tree
-    @members = Member.all
+    @members = Member.where(id: (0..45))
+    
     head = Member.find HEAD_OF_FAMILY
-    @nodes = @members - [head]
+    @nodes = @members
   end
 
   # GET /members/1 or /members/1.json

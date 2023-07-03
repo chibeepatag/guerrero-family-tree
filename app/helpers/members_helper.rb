@@ -30,4 +30,12 @@ module MembersHelper
     "Jose" => "#fdd97c",
     "Manuel"=> "#beabe3"}[member.branch]
   end
+
+  def mother_id member
+    'null'
+  end
+
+  def father_id member
+    member.parent_id.nil? ? 'null' : member.parent_id
+  end
 end
