@@ -12,7 +12,7 @@ module MembersHelper
   end
   
   def yod member
-    member.death.nil? ? ' ' : member.death
+    member.death.nil? ? 'null' : member.death
   end
 
   def shape member
