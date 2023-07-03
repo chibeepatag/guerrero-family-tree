@@ -32,10 +32,10 @@ module MembersHelper
   end
 
   def mother_id member
-    'null'
+    member.mother_id.nil? ? 'null' : member.mother_id
   end
 
   def father_id member
-    member.parent_id.nil? ? 'null' : member.parent_id
+    member.father_id.nil? ? 'null' : member.father_id
   end
 end
