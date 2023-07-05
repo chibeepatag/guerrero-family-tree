@@ -38,4 +38,8 @@ module MembersHelper
   def father_id member
     member.father_id.nil? ? 'null' : member.father_id
   end
+
+  def gender member
+    member.in_law ? "male" : "female"
+  end
 end
