@@ -6,7 +6,6 @@ class CreateMembers < ActiveRecord::Migration[7.0]
       t.integer :death
       t.boolean :in_law
       t.string :nicknames
-      t.references :parent, foreign_key: { to_table: 'members' }
       t.references :spouse, foreign_key: { to_table: 'members' }
       t.timestamps
     end

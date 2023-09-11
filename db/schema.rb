@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_03_092057) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_03_090728) do
   create_table "members", charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
     t.integer "birth"
     t.integer "death"
     t.boolean "in_law"
     t.string "nicknames"
-    t.bigint "parent_id"
     t.bigint "spouse_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -26,7 +25,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_03_092057) do
     t.bigint "father_id"
     t.index ["father_id"], name: "index_members_on_father_id"
     t.index ["mother_id"], name: "index_members_on_mother_id"
-    t.index ["parent_id"], name: "index_members_on_parent_id"
     t.index ["spouse_id"], name: "index_members_on_spouse_id"
   end
 
