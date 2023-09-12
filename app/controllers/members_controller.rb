@@ -8,6 +8,7 @@ class MembersController < ApplicationController
 
   def tree
     @members = Member.all
+    
     @nodes = @members
   end
 
