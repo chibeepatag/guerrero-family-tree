@@ -12,7 +12,7 @@ default: &default
 development:
   <<: *default
   username: <%= ENV.fetch("MYSQL_USER")%>
-  database: jardiolin_tree
+  database: guerrero_family_tree_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
