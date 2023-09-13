@@ -16,13 +16,3 @@
  #tree>svg {
   background-color: #F5FBFF;
 }
-.node>rect {
-  fill: #97C2AE;
-}   
-
-[data-l-id] path {
-    stroke: #568D73;
-}
-text {
-  font-size: 20px;
-}
