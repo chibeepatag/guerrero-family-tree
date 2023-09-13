@@ -14,9 +14,9 @@
   FamilyTree.templates.myTemplate.field_4 = 
             '<text  data-text-overflow="ellipsis" style="font-size: 15px;" fill="#464646" x="200" y="75" text-anchor="middle">YOD: {val}</text>';
   FamilyTree.templates.myTemplate_male = Object.assign({}, FamilyTree.templates.myTemplate);
-  FamilyTree.templates.myTemplate_male.node = '<line x1="13" x2="13" y1="0" y2="75" stroke="orange" stroke-width="25"/><rect x="25" y="0" height="75" width="300" stroke-width="0" fill="#FFFFFF" opacity="0.35"></rect>';
+  FamilyTree.templates.myTemplate_male.node = '<line x1="13" x2="13" y1="0" y2="75" stroke="orange" stroke-width="25" opacity="0.35"/><rect x="25" y="0" height="75" width="300" stroke-width="0" fill="#FFFFFF" ></rect>';
   FamilyTree.templates.myTemplate_female = Object.assign({}, FamilyTree.templates.myTemplate);
-  FamilyTree.templates.myTemplate_female.node = '<line x1="13" x2="13" y1="0" y2="75" stroke="orange" stroke-width="25"/><rect x="0" y="0" height="75" width="300" stroke-width="0" fill="#c2ae97" opacity="0.35"></rect><rect x="25" y="0" height="75" width="300" stroke-width="1" fill="#FFFFFF"></rect>';
+  FamilyTree.templates.myTemplate_female.node = '<line x1="13" x2="13" y1="0" y2="75" stroke="orange" stroke-width="25"/><rect x="25" y="0" height="75" width="300" stroke-width="0" fill="#FFFFFF"></rect>';
 
     
    var family = new FamilyTree(document.getElementById("tree"), {
