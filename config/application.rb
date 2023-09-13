@@ -18,5 +18,19 @@ module GuerreroFamilyTree
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.theme = {
+      font: "league spartan",
+      background: "#F1F1F1",
+      font_color: "#222831",
+      lines: "#595959",
+      box_border: "#F1F1F1",
+      red: "#FF5757",
+      yellow: "#FFB604",
+      green: "#0DC86F",
+      blue: "#2772FF",
+      orange: "#FF7729",
+      lavender: "#AE9CD6"
+    }
   end
 end
