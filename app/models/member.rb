@@ -6,7 +6,7 @@ class Member < ApplicationRecord
 
   def descendants
     results = []
-    children = Member.where(mother_id: id).or(Member.where(father_id: id))
+    children = Member.where(mother_id: id).or(Member.where(father_id: id)).order(:birth_order)
     children.each do |child|
       results << child
       results << child.spouse
