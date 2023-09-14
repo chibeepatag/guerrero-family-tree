@@ -20,15 +20,14 @@ module MembersHelper
   end
 
   def color member
-    return "#e3d5ab" if member.in_law
-    return "#795548" if member.branch.nil?
+    return "red" if member.branch.nil?
     {
-    "Luis" => "#fbfdaa",
-    "Rosa"=> "#ffc9de",
-    "Fernando"=> "#c1f0b2",
-    "Alfredo"=> "#b2e4f0",
-    "Jose" => "#fdd97c",
-    "Manuel"=> "#beabe3"}[member.branch]
+    "Luis" => "yellow",
+    "Rosa"=> "red",
+    "Fernando"=> "green",
+    "Alfredo"=> "blue",
+    "Jose" => "orange",
+    "Manuel"=> "lavender"}[member.branch]
   end
 
   def mother_id member
