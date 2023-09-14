@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
-  resources :members do
-    collection do
-      get 'tree'
-    end
-  end
+  resources :members
   get 'tree', to: 'tree#show'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
