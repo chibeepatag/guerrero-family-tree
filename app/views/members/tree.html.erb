@@ -7,7 +7,7 @@
     .bft-light {background-color: #F1F1F1}
   </style>`;
   FamilyTree.templates.myTemplate.field_0 = 
-            '<text  data-text-overflow="ellipsis" style="font-size: 15px;" fill="#464646" x="150" y="37" text-anchor="middle">{val}</text>';
+            '<text  data-text-overflow="ellipsis" style="font-size: 15px; font-weight: bold" fill="#464646" x="150" y="37" text-anchor="middle">{val}</text>';
   FamilyTree.templates.myTemplate.field_1 = 
             '<text  data-text-overflow="ellipsis" style="font-size: 15px;" fill="#464646" x="130" y="57" text-anchor="middle">{val}</text>';
  FamilyTree.templates.myTemplate.field_2 = 
@@ -20,7 +20,6 @@
   FamilyTree.templates.myTemplate_male.node = '<line x1="13" x2="13" y1="0" y2="90" stroke="orange" stroke-width="25" opacity="0.35"/><rect x="25" y="0" height="90" width="300" stroke-width="0" fill="#FFFFFF" ></rect>';
   FamilyTree.templates.myTemplate_female = Object.assign({}, FamilyTree.templates.myTemplate);
   FamilyTree.templates.myTemplate_female.node = '<line x1="13" x2="13" y1="0" y2="90" stroke="orange" stroke-width="25"/><rect x="25" y="0" height="90" width="300" stroke-width="0" fill="#FFFFFF"></rect>';
-
     
    var family = new FamilyTree(document.getElementById("tree"), {
     template: "myTemplate",
