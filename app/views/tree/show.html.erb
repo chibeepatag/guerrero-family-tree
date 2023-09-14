@@ -2,8 +2,12 @@
 <script>
   <%= render partial: "red"%>
   <%= render partial: "orange"%>
+  <%= render partial: "yellow"%>
+  <%= render partial: "green"%>
+  <%= render partial: "blue"%>
+  <%= render partial: "lavender"%>
+  <%= render partial: "beige"%>
   var family = new FamilyTree(document.getElementById("tree"), {
-    template: "red",
     menu: {
             pdf: { text: "Export PDF" },
             png: { text: "Export PNG" },
@@ -26,24 +30,20 @@
             field_4: "death"
         },
         tags: {
-            red: {
-              template: "red"
-            },
-            orange: {
-              template: "orange"
-            },
-            yellow: {
-              template: "red"
-            },
-            green: {
-              template: "orange"
-            },
-            blue: {
-              template: "red"
-            },
-            lavender: {
-              template: "orange"
-            }
+            beige_female: {template: "beige_female"},
+            red_female: {template: "red_female"},
+            orange_female: {template: "orange_female"},
+            yellow_female: {template: "yellow_female"},
+            green_female: {template: "green_female"},
+            blue_female: {template: "blue_female"},
+            lavender_female: {template: "lavender_female"},
+            beige_male: {template: "beige_male"},
+            red_male: {template: "red_male"},
+            orange_male: {template: "orange_male"},
+            yellow_male: {template: "yellow_male"},
+            green_male: {template: "green_male"},
+            blue_male: {template: "blue_male"},
+            lavender_male: {template: "lavender_male"}
         },    
         nodes: [<%= render partial: "member_json", collection: @members %>]
     });
