@@ -19,17 +19,6 @@ module MembersHelper
     member.in_law ? 'diamond' : 'circle'
   end
 
-  def color member
-    return "red" if member.branch.nil?
-    {
-    "Luis" => "yellow",
-    "Rosa"=> "red",
-    "Fernando"=> "green",
-    "Alfredo"=> "blue",
-    "Jose" => "orange",
-    "Manuel"=> "lavender"}[member.branch]
-  end
-
   def mother_id member
     member.mother_id.nil? ? 'null' : member.mother_id
   end
