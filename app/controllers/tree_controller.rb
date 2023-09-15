@@ -8,8 +8,10 @@ class TreeController < ApplicationController
     else
       @members = Member.all
     end
+  end
 
-    @nodes = @members
+  def branch
+    @members = Member.where(branch: params[:branch_name])
   end
   
 end
