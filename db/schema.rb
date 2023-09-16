@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_13_012437) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_15_105330) do
   create_table "members", charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
     t.integer "birth"
@@ -25,6 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_13_012437) do
     t.bigint "father_id"
     t.bigint "spouse2_id"
     t.integer "birth_order"
+    t.boolean "is_head"
     t.index ["father_id"], name: "index_members_on_father_id"
     t.index ["mother_id"], name: "index_members_on_mother_id"
     t.index ["spouse2_id"], name: "index_members_on_spouse2_id"
