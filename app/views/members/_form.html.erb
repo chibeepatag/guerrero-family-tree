@@ -10,6 +10,7 @@
       </ul>
     </div>
   <% end %>
+  <%= select_tag(:branch, options_for_select([['Luis', 'Luis'], ['Alfredo', 'Alfredo'], ['Jose', 'Jose'], ['Fernando', 'Fernando'], ['Manuel', 'Manuel'], ['Rosa', 'Rosa']])) %><br/>
   <%= form.label :name, "Name:" %>
   <%= form.text_field :name %> <br/>
   <%= form.label :nicknames, "Nicknames:" %>
@@ -18,8 +19,13 @@
   <%= form.number_field :birth %> <br/>
   <%= form.label :death, "Death:" %>
   <%= form.number_field :death %> <br/>
-  <%= form.label :spouse, "Spouse:" %>
-  <%= form.number_field :spouse_id %> <br/>
+  <%= form.label :spouse_id, "Spouse:" %>
+  <%= form.collection_select(:spouse_id, @members, :id, :name, { include_blank: true }) %><br/>
+  <%= form.label :father_id, "Father:"%>
+  <%= form.collection_select(:father_id, @members, :id, :name, { include_blank: true }) %><br/>
+  <%= form.label :mother_id, "Mother:"%>
+  <%= form.collection_select(:mother_id, @members, :id, :name, { include_blank: true }) %><br/> 
+   <br/>
   <div>
     <%= form.submit %>
   </div>

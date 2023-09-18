@@ -19,10 +19,12 @@ class MembersController < ApplicationController
   # GET /members/new
   def new
     @member = Member.new
+    @members = Member.all
   end
 
   # GET /members/1/edit
   def edit
+    @members = Member.all
   end
 
   # POST /members or /members.json
