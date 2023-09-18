@@ -5,8 +5,10 @@ class MembersController < ApplicationController
   def index
     if params[:branch].present?
       @members = Member.where(branch: params[:branch])
+      @title = "#{params[:branch]} Members"
     else
       @members = Member.all
+      @title = "Members"
     end
   end
 
@@ -69,6 +71,6 @@ class MembersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def member_params
-      params.fetch(:member, {})
+      params.require(:member).permit(:name, :nicknames, :birth, :death, :spouse_id)
     end
 end

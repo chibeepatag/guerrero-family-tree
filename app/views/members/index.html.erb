@@ -1,9 +1,9 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Members</h1>
+<h1><%=@title%></h1>
 <div id="members">
   <table>
-    <tr><td>id</td><td>name</td><td>birth</td><td>death</td><td>Father</td><td>Mother</td><td>Spouse</td></tr>
+    <tr><td>ID</td><td>Name</td><td>Birth</td><td>Death</td><td>Father</td><td>Mother</td><td>Spouse</td></tr>
   
   <% @members.each do |member| %>
     <tr id="<%= dom_id member %>">
