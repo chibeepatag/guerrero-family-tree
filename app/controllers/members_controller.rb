@@ -3,7 +3,11 @@ class MembersController < ApplicationController
 
   # GET /members or /members.json
   def index
-    @members = Member.all
+    if params[:branch].present?
+      @members = Member.where(branch: params[:branch])
+    else
+      @members = Member.all
+    end
   end
 
   # GET /members/1 or /members/1.json
