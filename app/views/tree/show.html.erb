@@ -8,6 +8,28 @@
   <%= render partial: "lavender"%>
   <%= render partial: "beige"%>
   var family = new FamilyTree(document.getElementById("tree"), {
+    nodeMouseClick: FamilyTree.action.edit, //edit mode
+    editForm: {
+            buttons:  {
+                pdf: null,
+                share: null
+            },
+            generateElementsFromFields: false,
+            elements: [
+                { type: 'textbox', label: 'Full Name', binding: 'name'},
+                { type: 'textbox', label: 'Nickname', binding: 'nickname'},
+                { type: 'textbox', label: 'Year of Birth', binding: 'birth'},
+                { type: 'textbox', label: 'Year of Death', binding: 'death'},
+                { type: 'select', options: [
+                    {value: 'Leon', text: 'Leon'},
+                    {value: 'Fernando', text: 'Fernando'},
+                    {value: 'Alfredo', text: 'Alfredo'},
+                    {value: 'Jose', text: 'Jose'},
+                    {value: 'Rosa', text: 'Rosa'},
+                    {value: 'Luis', text: 'Luis'},
+                    {value: 'Manuel', text: 'Manuel'}]}
+                ]
+        },
     menu: {
             pdf: { text: "Export PDF" },
             png: { text: "Export PNG" },
