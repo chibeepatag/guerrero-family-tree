@@ -3,12 +3,12 @@
 <h1>Members</h1>
 <div id="members">
   <table>
-    <tr><td>id</td><td>name</td><td>birth</td><td>death</td><td>in_law</td><td>nicknames</td><td>Parent</td><td>Parent ID</td><td>Spouse</td><td>Spouse ID</td></tr>
+    <tr><td>id</td><td>name</td><td>birth</td><td>death</td><td>Father</td><td>Mother</td><td>Spouse</td></tr>
   
   <% @members.each do |member| %>
     <tr id="<%= dom_id member %>">
     <%= render member %>
-    <td><%= link_to "Show this member", member %></td>
+    <td><%= link_to "Edit", edit_member_path(member) %></td>
   </tr>
   <% end %>
   </table>

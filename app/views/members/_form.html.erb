@@ -10,7 +10,16 @@
       </ul>
     </div>
   <% end %>
-
+  <%= form.label :name, "Name:" %>
+  <%= form.text_field :name %> <br/>
+  <%= form.label :nicknames, "Nicknames:" %>
+  <%= form.text_field :nicknames %> <br/>
+  <%= form.label :birth, "Birth:" %>
+  <%= form.number_field :birth %> <br/>
+  <%= form.label :death, "Death:" %>
+  <%= form.number_field :death %> <br/>
+  <%= form.label :spouse, "Spouse:" %>
+  <%= form.number_field :spouse_id %> <br/>
   <div>
     <%= form.submit %>
   </div>

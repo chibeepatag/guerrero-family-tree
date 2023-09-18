@@ -30,4 +30,12 @@ module MembersHelper
   def gender member
     member.in_law ? "male" : "female"
   end
+
+  def nicknames member
+    member.nicknames ? "(#{member.nicknames})" : ""
+  end
+
+  def spouse2 member
+    member.spouse2 ? ", #{member.spouse2.name}": ""
+  end
 end
