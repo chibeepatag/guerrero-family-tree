@@ -12,6 +12,10 @@ class MembersController < ApplicationController
     end
   end
 
+  def search
+    @members = Member.where("name LIKE ?", Member.sanitize_sql_like(params[:name]) + "%")#.pluck(:id, :name)
+    render json: @members
+  end
   # GET /members/1 or /members/1.json
   def show
   end
@@ -20,6 +24,7 @@ class MembersController < ApplicationController
   def new
     @member = Member.new
     @members = Member.all
+    render layout: false
   end
 
   # GET /members/1/edit
@@ -73,6 +78,6 @@ class MembersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def member_params
-      params.require(:member).permit(:name, :nicknames, :birth, :death, :spouse_id)
+      params.require(:member).permit(:name, :nicknames, :birth, :death, :spouse_id, :mother_id, :father_id, :branch)
     end
 end

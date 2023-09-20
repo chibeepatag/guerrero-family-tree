@@ -1,6 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
 <h1><%=@title%></h1>
+<%= link_to "New member", new_member_path %>
 <div id="members">
   <table>
     <tr><td>ID</td><td>Name</td><td>Birth</td><td>Death</td><td>Father</td><td>Mother</td><td>Spouse</td></tr>
@@ -14,4 +15,3 @@
   </table>
 </div>
 
-<%= link_to "New member", new_member_path %>

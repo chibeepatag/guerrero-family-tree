@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :members
+  resources :members do
+    get 'search', on: :collection 
+  end
   get 'tree', to: 'tree#show'
   get 'tree/branch/:branch_name', to: 'tree#branch'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
