@@ -12,7 +12,7 @@
                 data: {
                     src: async (query) => {
                       try {
-                        const source = await fetch(`search?name=${query}`);
+                        const source = await fetch(`/members/search?name=${query}`);
                         const data = await source.json();
                         return data;
                       } catch (error) {
