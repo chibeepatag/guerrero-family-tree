@@ -1,13 +1,26 @@
+<script type="text/javascript">
+  function changeBranch(event){
+    console.log(event.target.value)
+    window.location.href = `/members?branch=${event.target.value}`
+  }
+</script>
 <p style="color: green"><%= notice %></p>
 
 <h1><%=@title%></h1>
-<%= link_to "New member", new_member_path %>
+<div>
+  <span style="float: left">
+    <%= select(:member, :branch, options_for_select([['Luis', 'Luis'], ['Alfredo', 'Alfredo'], ['Jose', 'Jose'], ['Fernando', 'Fernando'], ['Manuel', 'Manuel'], ['Rosa', 'Rosa']]), {}, {onchange: "changeBranch(event)"} )%></span>
+  <span style="float: right"><%= link_to "New Member", new_member_path %></span>
+</div>
+
+<br>
+<br>
 <div id="members">
   <table>
     <tr><td>ID</td><td>Name</td><td>Birth</td><td>Death</td><td>Father</td><td>Mother</td><td>Spouse</td></tr>
   
   <% @members.each do |member| %>
-    <tr id="<%= dom_id member %>">
+    <tr id="<%= dom_id member %>" class="<%=cycle("odd", "even")%>">
     <%= render member %>
     <td><%= link_to "Edit", edit_member_path(member) %></td>
   </tr>
