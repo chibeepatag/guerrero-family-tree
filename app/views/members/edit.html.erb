@@ -76,6 +76,8 @@
       <input type="hidden" id="mother" class="id_field" name="member[mother_id]" value="<%=@member.mother_id%>"/>
       <input id="mother_auto" type="search" dir="ltr" spellcheck=false autocorrect="off" autocomplete="off" autocapitalize="off" data-field="mother"/><br/>
        <br/>
+       <%= form.label :in_law, "In Law:" %>
+       <%= form.check_box :in_law %> <br/>
       <div>
         <%= form.submit %>
       </div>
