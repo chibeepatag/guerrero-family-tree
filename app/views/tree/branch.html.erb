@@ -8,6 +8,7 @@
   <%= render partial: "lavender"%>
   <%= render partial: "beige"%>
   var family = new FamilyTree(document.getElementById("tree"), {
+    nodeMouseClick: "none",
     menu: {
             pdf: { text: "Export PDF" },
             png: { text: "Export PNG" },
