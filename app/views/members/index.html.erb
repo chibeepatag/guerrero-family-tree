@@ -9,7 +9,7 @@
 <h1><%=@title%></h1>
 <div>
   <span style="float: left">
-    <%= select(:member, :branch, options_for_select([['Luis', 'Luis'], ['Alfredo', 'Alfredo'], ['Jose', 'Jose'], ['Fernando', 'Fernando'], ['Manuel', 'Manuel'], ['Rosa', 'Rosa']]), {}, {onchange: "changeBranch(event)"} )%></span>
+    <%= select(:member, :branch, options_for_select([['Luis', 'Luis'], ['Alfredo', 'Alfredo'], ['Jose', 'Jose'], ['Fernando', 'Fernando'], ['Manuel', 'Manuel'], ['Rosa', 'Rosa']], selected: params[:branch]), {include_blank: true}, {onchange: "changeBranch(event)"} )%></span>
   <span style="float: right"><%= link_to "New Member", new_member_path %></span>
 </div>
 
