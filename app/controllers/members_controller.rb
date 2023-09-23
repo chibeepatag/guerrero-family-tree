@@ -1,5 +1,4 @@
 class MembersController < ApplicationController
-  layout "members"
   before_action :set_member, only: %i[ show edit update destroy ]
 
   # GET /members or /members.json
@@ -25,7 +24,6 @@ class MembersController < ApplicationController
   def new
     @member = Member.new
     @members = Member.all
-    render layout: false
   end
 
   # GET /members/1/edit

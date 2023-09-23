@@ -1,50 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js"></script>
-    <script>
-        function createAutocomplete(field){
-            const autocomplete = new autoComplete({
-                name: field,
-                selector: `#${field}`,
-                wrapper: false,
-                placeHolder: "Search for member...",
-                data: {
-                    src: async (query) => {
-                      try {
-                        const source = await fetch(`/members/search?name=${query}`);
-                        const data = await source.json();
-                        return data;
-                      } catch (error) {
-                        return error;
-                      }
-                    },
-                    keys: ["name"]
-                },
-                resultItem: {
-                    highlight: true
-                },
-                events: {
-                    input: {
-                        selection: (event) => {
-                            const selection = event.detail.selection.value;
-                            autocomplete.input.value = selection.name;
-                            autocomplete.input.parentNode.querySelector(`#${autocomplete.input.dataset.field}`).value = selection.id
-                        }
-                    }
-                }
-            });
-        }
-        function createAllAutocomplete(){
-            createAutocomplete('spouse_auto');
-            createAutocomplete('father_auto');
-            createAutocomplete('mother_auto');       
-        }
-        document.addEventListener('DOMContentLoaded', createAllAutocomplete, false);
-    </script>
-</head>
-<body>
-  <h1>Editing member</h1>
+<h1>Editing member</h1>
     <%= form_with(model: @member) do |form| %>
       <% if @member.errors.any? %>
         <div style="color: red">
@@ -88,9 +42,6 @@
   <%= link_to "Back to members", members_path %> | 
   <%= button_to "Destroy this member", @member, method: :delete %>
 </div>
-</body>
-</html>
-
 
 
 
