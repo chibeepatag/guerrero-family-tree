@@ -1,3 +1,5 @@
+import autoComplete from 'autoComplete';
+
 function createAutocomplete(field){
             const autocomplete = new autoComplete({
                 name: field,
