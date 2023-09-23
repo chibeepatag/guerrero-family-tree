@@ -1,5 +1,6 @@
 class TreeController < ApplicationController
-
+  layout "tree"
+  
   def show
     if params[:parent_id].present?
       parent1 = Member.find params[:parent_id]

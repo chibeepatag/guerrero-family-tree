@@ -1,4 +1,5 @@
 class MembersController < ApplicationController
+  layout "members"
   before_action :set_member, only: %i[ show edit update destroy ]
 
   # GET /members or /members.json
