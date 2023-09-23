@@ -1,5 +1,4 @@
 class TreeController < ApplicationController
-  layout "tree"
   
   def show
     if params[:parent_id].present?
