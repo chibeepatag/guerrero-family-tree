@@ -4,3 +4,7 @@ import "bootstrap"
 import "FamilyTree"
 import "autoComplete"
 import "controllers"
+import "jquery"
+
+import $ from "jquery"
+console.log($)
