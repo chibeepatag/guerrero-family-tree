@@ -38,4 +38,9 @@ module MembersHelper
   def spouse2 member
     member.spouse2 ? ", #{member.spouse2.name}": ""
   end
+
+  def truncated_name name
+    return if name.nil?
+    name.truncate(35, separator: "...")
+  end
 end

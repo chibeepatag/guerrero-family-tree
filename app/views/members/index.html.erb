@@ -6,7 +6,6 @@
 </script>
 <p style="color: green"><%= notice %></p>
 
-<h1><%=@title%></h1>
 <div>
   <span style="float: left">
     <%= select(:member, :branch, options_for_select([['Luis', 'Luis'], ['Alfredo', 'Alfredo'], ['Jose', 'Jose'], ['Fernando', 'Fernando'], ['Manuel', 'Manuel'], ['Rosa', 'Rosa']], selected: params[:branch]), {include_blank: true}, {onchange: "changeBranch(event)"} )%></span>
@@ -15,16 +14,32 @@
 
 <br>
 <br>
-<div id="members">
-  <table class="table">
-    <tr><td>ID</td><td>Name</td><td>Birth</td><td>Death</td><td>Father</td><td>Mother</td><td>Spouse</td></tr>
-  
-  <% @members.each do |member| %>
-    <tr id="<%= dom_id member %>" class="<%=cycle("odd", "even")%>">
-    <%= render member %>
-    <td><%= link_to "Edit", edit_member_path(member) %></td>
-  </tr>
-  <% end %>
-  </table>
-</div>
+<div class="content-wrapper">
+  <div class="container-xxl flex-grow-1 container-p-y">
+    <div class="card">
+      <h5 class="card-header"><%=@list_title%></h5>
+      <div class="table-responsive text-nowrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Birth</th>
+              <th>Death</th>
+              <th>Parents</th>
+              <th>Spouse</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody class="table-border-bottom-0">
+            <% @members.each do |member| %>
+            <%= render member %>
+            <%end%>  
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>  
+
 

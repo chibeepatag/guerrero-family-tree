@@ -5,10 +5,10 @@ class MembersController < ApplicationController
   def index
     if params[:branch].present?
       @members = Member.where(branch: params[:branch])
-      @title = "#{params[:branch]} Members"
+      @list_title = "#{params[:branch]} Members"
     else
       @members = Member.all
-      @title = "Members"
+      @list_title = "Members"
     end
   end
 

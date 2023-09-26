@@ -7,4 +7,3 @@ import "controllers"
 import "jquery"
 
 import $ from "jquery"
-console.log($)

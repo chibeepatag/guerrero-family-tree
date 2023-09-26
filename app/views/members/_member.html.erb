@@ -1,7 +1,11 @@
-<td><%=member.id%></td>
+<tr>
+<td><span class="fw-medium"><%=member.id%></span></td>
 <td><%=member.name%> <%=nicknames(member)%></td>
 <td><%=member.birth%></td>
 <td><%=member.death%></td>
-<td><%=member.father&.name%></td>
-<td><%=member.mother&.name%></td>
-<td><%=member.spouse&.name%><%=spouse2(member)%></td>
+<td><%=truncated_name(member.father&.name)%><br/><%=truncated_name(member.mother&.name)%></td>
+<td><%=truncated_name(member.spouse&.name)%><br/><%=truncated_name(spouse2(member))%></td>
+<td><i class="bx bx-edit-alt me-1"></i> Edit <i class="bx bx-trash me-1"></i> Delete</td>
+</tr>
+           
+            
