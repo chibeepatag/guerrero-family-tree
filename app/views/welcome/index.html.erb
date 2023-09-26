@@ -1,4 +1,13 @@
-WELCOME
-
-<%=link_to "tree", tree_path%>
-<%=link_to "list", members_path%>
+<div class="container-xxl container-p-y">
+  <div class="misc-wrapper">
+    <h1 class="mb-2 mx-2"><%=@title %></h1>
+    <p class="mb-4 mx-2">Leon Jorge · Alfredo · Jose · Rosa · Luis · Fernando · Manuel</p>
+    <div class="button-wrapper">
+      <%=link_to "Tree", tree_path, class: "btn btn-primary"%>
+      <%=link_to "Database", members_path, class: "btn btn-primary"%>
+    </div>
+    <div class="mt-4">
+      <%=image_tag "family", width: 700%>
+    </div>
+  </div>
+</div>
