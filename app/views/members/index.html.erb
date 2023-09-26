@@ -5,19 +5,29 @@
   }
 </script>
 <p style="color: green"><%= notice %></p>
-
-<div>
-  <span style="float: left">
-    <%= select(:member, :branch, options_for_select([['Luis', 'Luis'], ['Alfredo', 'Alfredo'], ['Jose', 'Jose'], ['Fernando', 'Fernando'], ['Manuel', 'Manuel'], ['Rosa', 'Rosa']], selected: params[:branch]), {include_blank: true}, {onchange: "changeBranch(event)"} )%></span>
-  <span style="float: right"><%= link_to "New Member", new_member_path %></span>
-</div>
-
-<br>
 <br>
 <div class="content-wrapper">
   <div class="container-xxl flex-grow-1 container-p-y">
     <div class="card">
-      <h5 class="card-header"><%=@list_title%></h5>
+      <div class="card-header">
+        <div class="btn-group">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+      Branch
+    </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="javascript:void(0);">Leon</a></li>
+        <li>
+          <hr class="dropdown-divider" />
+        </li>
+        <li><a class="dropdown-item" href="javascript:void(0);">Alfredo</a></li>
+        <li><a class="dropdown-item" href="javascript:void(0);">Fernando</a></li>
+        <li><a class="dropdown-item" href="javascript:void(0);">Jose</a></li>
+        <li><a class="dropdown-item" href="javascript:void(0);">Luis</a></li>
+        <li><a class="dropdown-item" href="javascript:void(0);">Manuel</a></li>
+        <li><a class="dropdown-item" href="javascript:void(0);">Rosa</a></li>
+      </ul>
+  </div>
+       <span style="float: right"><%= link_to "New Member", new_member_path %></span></div>
       <div class="table-responsive text-nowrap">
         <table class="table">
           <thead>
