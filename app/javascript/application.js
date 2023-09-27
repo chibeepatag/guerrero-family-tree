@@ -5,5 +5,6 @@ import "FamilyTree"
 import "autoComplete"
 import "controllers"
 import "jquery"
+import 'boxicons'
 
 import $ from "jquery"
