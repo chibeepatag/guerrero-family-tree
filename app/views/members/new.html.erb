@@ -1,38 +1,63 @@
-<h1>New Member</h1> 
-<div data-controller="members">
-<%= form_with(model: @member) do |form| %>
-  <% if @member.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(member.errors.count, "error") %> prohibited this member from being saved:</h2>
+<div class="content-wrapper">
+  <!-- Content -->
+  <div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="py-3 mb-4"><span class="text-muted fw-light">Forms /</span> Basic Inputs</h4>
+    <div class="row">
+      <!-- Form controls -->
+      <div class="col-md-6">
+        <div class="card mb-4" data-controller="members">
+          <h5 class="card-header">New Member</h5>
+          <%= form_with(model: @member) do |form| %>
+          <div class="card-body">
+            <div class="mb-3">
+              <%= form.label :branch, "Branch", class: "form-label" %>
+              <%= select(:member, :branch, options_for_select([['Luis', 'Luis'], ['Alfredo', 'Alfredo'], ['Jose', 'Jose'], ['Fernando', 'Fernando'], ['Manuel', 'Manuel'], ['Rosa', 'Rosa']]), {}, class: "form-select") %>
+            </div>
+            <div class="mb-3">
+              <%= form.label :name, "Name",  class: "form-label" %>
+              <%= form.text_field :name, class: "form-control" %>
+            </div>
+            <div class="mb-3">
+              <%= form.label :nicknames, "Nickname",  class: "form-label" %>
+              <%= form.text_field :nicknames, class: "form-control" %>
+            </div>
+            <div class="mb-3">
+              <%= form.label :birth, "Year of Birth",  class: "form-label" %>
+              <%= form.number_field :birth, class: "form-control" %>
+            </div>
+            <div class="mb-3">
+              <%= form.label :death, "Year of Death",  class: "form-label" %>
+              <%= form.number_field :death, class: "form-control" %>
+            </div>
+            <div class="mb-3">
+              <%= form.label :Spouse, "Spouse",  class: "form-label" %>
+              <%= form.text_field :spouse, class: "form-control", id: "spouse_auto", "data-field": "spouse1" %>
+              <%= form.hidden_field :spouse_id, class: "id_field", id: "spouse1"%>
+            </div>
+            <div class="mb-3">
+              <%= form.label :father_id, "Father",  class: "form-label" %>
+              <%= form.text_field :father, class: "form-control", id: "father_auto", "data-field": "father" %>
+              <%= form.hidden_field :father_id, class: "id_field", id: "father"%>
+            </div>
+            <div class="mb-3">
+              <%= form.label :mother_id, "Mother",  class: "form-label" %>
+              <%= form.text_field :mother, class: "form-control", id: "mother_auto", "data-field": "mother" %>
+              <%= form.hidden_field :mother_id, class: "id_field", id: "mother"%>
+            </div>
+            <div class="form-check mb-3">
+                <%= form.check_box :in_law, class: "form-check-input" %>
+                <%= form.label :in_law, "In Law", class: "form-check-label" %>
+            </div>
+ 
+          </div>
+          <div class="card-footer">
+            <%= form.submit %>
+          </div>
 
-      <ul>
-        <% @member.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+          
+          <%end%>
+        </div>
+      </div>
     </div>
-  <% end %>
-  <%= form.label :branch, "Branch:" %>
-  <%= select(:member, :branch, options_for_select([['Luis', 'Luis'], ['Alfredo', 'Alfredo'], ['Jose', 'Jose'], ['Fernando', 'Fernando'], ['Manuel', 'Manuel'], ['Rosa', 'Rosa']])) %><br/>
-  <%= form.label :name, "Name:" %>
-  <%= form.text_field :name %> <br/>
-  <%= form.label :nicknames, "Nicknames:" %>
-  <%= form.text_field :nicknames %> <br/>
-  <%= form.label :birth, "Birth:" %>
-  <%= form.number_field :birth %> <br/>
-  <%= form.label :death, "Death:" %>
-  <%= form.number_field :death %> <br/>
-  Spouse 1: <input type="hidden" id="spouse1" class="id_field" name="member[spouse_id]"/>
-  <input id="spouse_auto" type="search" dir="ltr" spellcheck=false autocorrect="off" autocomplete="off" autocapitalize="off" data-field="spouse1"/><br/>
-  <%= form.label :father_id, "Father:"%>
-  <input type="hidden" id="father" class="id_field" name="member[father_id]"/>
-  <input id="father_auto" type="search" dir="ltr" spellcheck=false autocorrect="off" autocomplete="off" autocapitalize="off" data-field="father"/><br/>
-  <%= form.label :mother_id, "Mother:"%>
-  <input type="hidden" id="mother" class="id_field" name="member[mother_id]"/>
-  <input id="mother_auto" type="search" dir="ltr" spellcheck=false autocorrect="off" autocomplete="off" autocapitalize="off" data-field="mother"/><br/>
-   <br/>
-  <div>
-    <%= form.submit %>
   </div>
-<% end %>
 </div>
