@@ -1,0 +1,15 @@
+<button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          Branch
+        </button>
+        <ul class="dropdown-menu">
+          <li><%= link_to "Leon", members_path(branch: "Leon"), class: "dropdown-item"%></li>
+          <li>
+            <hr class="dropdown-divider" />
+          </li>
+          <li><%= link_to "Alfredo", members_path(branch: "Alfredo"), class: "dropdown-item"%></li>
+          <li><%= link_to "Fernando", members_path(branch: "Fernando"), class: "dropdown-item"%></li>
+          <li><%= link_to "Jose", members_path(branch: "Jose"), class: "dropdown-item"%></li>
+          <li><%= link_to "Luis", members_path(branch: "Luis"), class: "dropdown-item"%></li>
+          <li><%= link_to "Manuel", members_path(branch: "Manuel"), class: "dropdown-item"%></li>
+          <li><%= link_to "Rosa", members_path(branch: "Rosa"), class: "dropdown-item"%></li>
+        </ul>

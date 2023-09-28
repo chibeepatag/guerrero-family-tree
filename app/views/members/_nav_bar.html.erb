@@ -1,0 +1,19 @@
+<h4 class="py-3 mb-4"><span class="text-muted fw-light"><%=Rails.configuration.family_name%> /</span> Family Members</h4>
+<div class="row">
+  <div class="col-md-12">
+    <ul class="nav nav-pills flex-column flex-md-row mb-3">
+      <li class="nav-item">
+        <%= link_to "Home", root_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Tree", tree_path, class: nav_classes('tree') %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Members", members_path, class: nav_classes('index') %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "New Member", new_member_path, class: nav_classes('new') %>
+      </li>
+    </ul>
+  </div>
+</div>

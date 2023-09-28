@@ -1,36 +1,7 @@
 <div class="content-wrapper">
-  <!-- Content -->
   <div class="container-xxl flex-grow-1 container-p-y">
-  <h4 class="py-3 mb-4"><span class="text-muted fw-light">Members /</span> <%=@list_title%></h4>
-  <p style="color: green"><%= notice %></p>
-  <div class="row">
-    <div class="col-md-12">
-      <ul class="nav nav-pills flex-column flex-md-row mb-3">
-        <li class="nav-item">
-          <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            Branch
-          </button>
-          <ul class="dropdown-menu">
-            <li><%= link_to "Leon", members_path(branch: "Leon"), class: "dropdown-item"%></li>
-            <li>
-              <hr class="dropdown-divider" />
-            </li>
-            <li><%= link_to "Alfredo", members_path(branch: "Alfredo"), class: "dropdown-item"%></li>
-            <li><%= link_to "Fernando", members_path(branch: "Fernando"), class: "dropdown-item"%></li>
-            <li><%= link_to "Jose", members_path(branch: "Jose"), class: "dropdown-item"%></li>
-            <li><%= link_to "Luis", members_path(branch: "Luis"), class: "dropdown-item"%></li>
-            <li><%= link_to "Manuel", members_path(branch: "Manuel"), class: "dropdown-item"%></li>
-            <li><%= link_to "Rosa", members_path(branch: "Rosa"), class: "dropdown-item"%></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <%= link_to "New Member", new_member_path, class: "nav-link" %>
-        </li>
-      </ul>
-    </div>
-  </div>
-  </div>
-  <div class="container-xxl flex-grow-1 container-p-y">
+    <%=render "nav_bar", locals: {page: "index"}%>
+    <p style="color: green"><%= notice %></p>
     <div class="card">
       <div class="card-header"></div>
       <div class="table-responsive text-nowrap">
