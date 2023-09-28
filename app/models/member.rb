@@ -15,4 +15,8 @@ class Member < ApplicationRecord
     end
     results.flatten.compact
   end
+
+  def to_s
+    name
+  end
 end
