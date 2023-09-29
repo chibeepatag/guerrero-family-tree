@@ -5,7 +5,7 @@
 <td><%=member.death%></td>
 <td><%=truncated_name(member.father&.name)%><br/><%=truncated_name(member.mother&.name)%></td>
 <td><%=truncated_name(member.spouse&.name)%><br/><%=truncated_name(spouse2(member))%></td>
-<td><i class="bx bx-edit-alt me-1"></i> Edit <i class="bx bx-trash me-1"></i> Delete</td>
+<td><%=edit_link(member)%>&nbsp;|&nbsp;<%=delete_link(member)%></td>
 </tr>
            
             

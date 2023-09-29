@@ -1,10 +1,15 @@
 <p style="color: green"><%= notice %></p>
-
-<%= render @member %>
-
+<table>
+<%= render @member %><br/>
+Branch: <%=@member.branch%>
+</table>
 <div>
   <%= link_to "Edit this member", edit_member_path(@member) %> |
   <%= link_to "Back to members", members_path %>
+  <%= link_to "New members", new_member_path %>
 
+<br/>
+<br/>
+<br/>
   <%= button_to "Destroy this member", @member, method: :delete %>
 </div>

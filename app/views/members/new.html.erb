@@ -31,17 +31,17 @@
             </div>
             <div class="mb-3">
               <%= form.label :Spouse, "Spouse",  class: "form-label" %>
-              <%= form.text_field :spouse, class: "form-control", id: "spouse_auto", "data-field": "spouse1" %>
+              <%= form.text_field :spouse, class: "form-control", id: "spouse_auto", "data-field": "spouse1","autocomplete": "off" %>
               <%= form.hidden_field :spouse_id, class: "id_field", id: "spouse1"%>
             </div>
             <div class="mb-3">
               <%= form.label :father_id, "Father",  class: "form-label" %>
-              <%= form.text_field :father, class: "form-control", id: "father_auto", "data-field": "father" %>
+              <%= form.text_field :father, class: "form-control", id: "father_auto", "data-field": "father","autocomplete": "off" %>
               <%= form.hidden_field :father_id, class: "id_field", id: "father"%>
             </div>
             <div class="mb-3">
               <%= form.label :mother_id, "Mother",  class: "form-label" %>
-              <%= form.text_field :mother, class: "form-control", id: "mother_auto", "data-field": "mother" %>
+              <%= form.text_field :mother, class: "form-control", id: "mother_auto", "data-field": "mother","autocomplete": "off" %>
               <%= form.hidden_field :mother_id, class: "id_field", id: "mother"%>
             </div>
             <div class="form-check mb-3">

@@ -1,11 +1,4 @@
 module MembersHelper
-  def connection member
-    member.parent || member.spouse
-  end
-
-  def to member
-    connection(member).nil? ? 'null' : connection(member).id
-  end
 
   def yob member
     member.birth.nil? ? 'null' : member.birth
@@ -42,5 +35,17 @@ module MembersHelper
   def truncated_name name
     return if name.nil?
     name.truncate(35, separator: "...")
+  end
+
+  def edit_link member
+    link_to edit_member_path(member)  do
+      content_tag("i", "", class: "bx bx-edit-alt me-1").concat('Edit')
+    end
+  end
+
+  def delete_link member
+    link_to member_path(member, method: :delete)  do
+      content_tag("i", "", class: "bx bx-edit-alt me-1").concat('Delete')
+    end
   end
 end
