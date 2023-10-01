@@ -1,0 +1,19 @@
+<div class="content-wrapper">
+  <!-- Content -->
+  <div class="container-xxl flex-grow-1 container-p-y">
+    <%=render "nav_bar", locals: {page: "new"} %>
+    <p style="color: green"><%= notice %></p>
+    <div class="row mb-5">
+      <%=render partial: "member_card", locals: {member: @member} %>
+      <%=render(partial: "member_card", locals: {member: @spouse}) unless @spouse.nil?%>
+      <%=render partial: "member_card", locals: {member: @spouse2} unless @spouse2.nil?%>
+    <div>
+    <%@descendants.in_groups_of(3, false) do |group|%>
+    <div class="row mb-5">
+      <%group.each do |member|%>
+      <%=render partial: "member_card", locals: {member: member} %>
+      <%end%>
+    </div>
+    <%end%>
+  </div>
+  </div>

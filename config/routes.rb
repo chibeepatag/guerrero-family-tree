@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root to: 'welcome#index'
   resources :members do
     get 'search', on: :collection 
+    get 'descendants', on: :member
   end
   get 'tree', to: 'tree#show'
   get 'tree/branch/:branch_name', to: 'tree#branch'

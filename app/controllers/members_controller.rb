@@ -1,5 +1,5 @@
 class MembersController < ApplicationController
-  before_action :set_member, only: %i[ show edit update destroy ]
+  before_action :set_member, only: %i[ show edit update destroy descendants]
 
   # GET /members or /members.json
   def index
@@ -67,6 +67,12 @@ class MembersController < ApplicationController
       format.html { redirect_to members_url, notice: "Member was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def descendants
+    @spouse = @member.spouse
+    @spouse2 = @member.spouse2
+    @descendants = @member.descendants
   end
 
   private
