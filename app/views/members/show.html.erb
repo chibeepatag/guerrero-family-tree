@@ -41,8 +41,9 @@
                         </tr>
                         </table>
                       </p>
-                      
-                      <a href="javascript:void(0)" class="btn btn-outline-primary">Go somewhere</a>
+                      <div class="mb-3 text-end">
+                        <%= link_to "Edit", edit_member_path(@member), class: "btn btn-outline-primary" %>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -54,16 +55,5 @@
 <%=branch_badge("Fernando")%>
 <%=branch_badge("Rosa")%>
 <%=branch_badge("Leon")%>
-
-  <div>
-    <%= link_to "Edit this member", edit_member_path(@member) %> |
-    <%= link_to "Back to members", members_path %>
-    <%= link_to "New members", new_member_path %>
-
-  <br/>
-  <br/>
-  <br/>
-    <%= button_to "Destroy this member", @member, method: :delete %>
-  </div>
   </div>
   </div>
