@@ -48,4 +48,25 @@ module MembersHelper
       content_tag("i", "", class: "bx bx-edit-alt me-1").concat('Delete')
     end
   end
+
+  def branch_badge branch
+    class_ = case branch
+    when "Luis"
+      "badge bg-label-luis"
+    when "Alfredo"
+      "badge bg-label-alfredo"
+    when "Jose"
+      "badge bg-label-jose"
+    when "Fernando"
+      "badge bg-label-fernando"
+    when "Rosa"
+      "badge bg-label-rosa"
+    when "Manuel"
+      "badge bg-label-manuel"
+    when "Leon"
+      "badge bg-label-leon"
+    
+    end
+    content_tag(:span, branch, class: class_)
+  end
 end

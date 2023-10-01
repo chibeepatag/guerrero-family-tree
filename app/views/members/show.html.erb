@@ -1,15 +1,69 @@
-<p style="color: green"><%= notice %></p>
-<table>
-<%= render @member %><br/>
-Branch: <%=@member.branch%>
-</table>
-<div>
-  <%= link_to "Edit this member", edit_member_path(@member) %> |
-  <%= link_to "Back to members", members_path %>
-  <%= link_to "New members", new_member_path %>
+<div class="content-wrapper">
+  <!-- Content -->
+  <div class="container-xxl flex-grow-1 container-p-y">
+    <%=render "nav_bar", locals: {page: "new"} %>
+    <p style="color: green"><%= notice %></p>
+                <div class="col-md-6 col-lg-4 mb-3">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <h5 class="card-title"><%=@member.name%></h5>
+                      <h6 class="card-subtitle text-muted"><%=@member.nicknames%></h6>
+                      <hr class="m-0"/>
+                      <p class="card-text">
+                        <table>
+                        <tr>
+                          <td>Branch: </td>
+                          <td><%=branch_badge(@member.branch)%></td>
+                        </tr>
+                        <tr>
+                          <td>Birth: </td>
+                          <td><%=@member.birth%></td>
+                        </tr>
+                        <tr>
+                          <td>Death: </td>
+                          <td><%=@member.death%></td>
+                        </tr>
+                        <tr>
+                          <td>Mother: </td>
+                          <td><%=@member&.mother%></td>
+                        </tr>
+                        <tr>
+                          <td>Father: </td>
+                          <td><%=@member&.father%></td>
+                        </tr>
+                        <tr>
+                          <td>Spouse: </td>
+                          <td><%=@member&.spouse%></td>
+                        </tr>
+                        <tr>
+                          <td>Spouse 2: </td>
+                          <td><%=@member&.spouse2%></td>
+                        </tr>
+                        </table>
+                      </p>
+                      
+                      <a href="javascript:void(0)" class="btn btn-outline-primary">Go somewhere</a>
+                    </div>
+                  </div>
+                </div>
 
-<br/>
-<br/>
-<br/>
-  <%= button_to "Destroy this member", @member, method: :delete %>
-</div>
+<%=branch_badge("Luis")%>
+<%=branch_badge("Alfredo")%>
+<%=branch_badge("Manuel")%>
+<%=branch_badge("Jose")%>
+<%=branch_badge("Fernando")%>
+<%=branch_badge("Rosa")%>
+<%=branch_badge("Leon")%>
+
+  <div>
+    <%= link_to "Edit this member", edit_member_path(@member) %> |
+    <%= link_to "Back to members", members_path %>
+    <%= link_to "New members", new_member_path %>
+
+  <br/>
+  <br/>
+  <br/>
+    <%= button_to "Destroy this member", @member, method: :delete %>
+  </div>
+  </div>
+  </div>
