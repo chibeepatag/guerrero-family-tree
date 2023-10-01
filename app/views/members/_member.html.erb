@@ -1,5 +1,5 @@
 <tr>
-<td><span class="fw-medium"><%=member.id%></span></td>
+<td><span class="fw-medium"><%=link_to(member.id, descendants_member_path(member))%></span></td>
 <td><%=member.name%> <%=nicknames(member)%></td>
 <td><%=member.birth%></td>
 <td><%=member.death%></td>
