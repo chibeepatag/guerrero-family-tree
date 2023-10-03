@@ -6,6 +6,12 @@ class MembersController < ApplicationController
     if params[:branch].present?
       @members = Member.where(branch: params[:branch])
       @list_title = "#{params[:branch]}"
+    elsif params[:head].present?
+      @member = Member.find(params[:head])
+      @members = [@member]
+      @members << @member.spouse unless @member.spouse.nil?
+      @members << @member.spouse2 unless @member.spouse2.nil?
+      @members = @members << @member.descendants
     else
       @members = Member.all
       @list_title = ""

@@ -1,6 +1,6 @@
 <h4 class="py-3 mb-4"><span class="text-muted fw-light"><%=Rails.configuration.family_name%> /</span> Family Members</h4>
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-md-6">
     <ul class="nav nav-pills flex-column flex-md-row mb-3">
       <li class="nav-item">
         <%= link_to "Home", root_path, class: "nav-link" %>
@@ -16,4 +16,17 @@
       </li>
     </ul>
   </div>
+  <%if action_name == "index"%>
+  <div class="col-md-6 align-items-right" data-controller="search">
+    <i class="bx bx-search fs-4 lh-0"></i>
+      <input
+        type="text"
+        id="members-search"
+        class="form-control border-0 shadow-none ps-1 ps-sm-2"
+        placeholder="Search..."
+        aria-label="Search..." />
+      <input type="hidden" id="member_id"/>
+  </div>
+  <%end%>
 </div>
+
