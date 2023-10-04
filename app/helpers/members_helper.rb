@@ -43,12 +43,6 @@ module MembersHelper
     end
   end
 
-  def delete_link member
-    link_to member_path(member, method: :delete)  do
-      content_tag("i", "", class: "bx bx-edit-alt me-1").concat('Delete')
-    end
-  end
-
   def branch_badge branch
     class_ = case branch
     when "Luis"

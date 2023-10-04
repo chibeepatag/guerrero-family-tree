@@ -1,7 +1,6 @@
 # README
 
 To Do:
-1. Delete link, add confirmation dialog
 2. Apply branch links to tree
 3. fix layout of tree page
 
