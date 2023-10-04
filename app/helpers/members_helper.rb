@@ -25,7 +25,7 @@ module MembersHelper
   end
 
   def nicknames member
-    member.nicknames ? "(#{member.nicknames})" : ""
+    member.nicknames.blank? ? "": "(#{member.nicknames})"
   end
 
   def spouse2 member
