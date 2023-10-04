@@ -35,7 +35,7 @@ export default class extends Controller {
                 selection: (event) => {
                     const selection = event.detail.selection.value;
                     autocomplete.input.value = selection.name;
-                    autocomplete.input.parentNode.querySelector(`#${autocomplete.input.dataset.field}`).value = selection.id
+                    autocomplete.input.parentNode.parentNode.querySelector(`#${autocomplete.input.dataset.field}`).value = selection.id
                 }
             }
         }
