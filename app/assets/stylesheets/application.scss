@@ -41,3 +41,31 @@
     background-color: #FF5757 !important;
     color: #ffffff !important;
 }
+
+.members-search_wrapper > ul {
+    z-index: 1;
+    position: absolute;
+    background-color: #FFFFFF;
+    padding-right: 50px;
+}
+
+.spouse_auto_wrapper > ul {
+    z-index: 1;
+    position: absolute;
+    background-color: var(--bs-card-bg);
+    padding-right: 50px;
+}
+
+.father_auto_wrapper > ul {
+    z-index: 1;
+    position: absolute;
+    background-color: var(--bs-card-bg);
+    padding-right: 50px;
+}
+
+.mother_auto_wrapper > ul {
+    z-index: 1;
+    position: absolute;
+    background-color: var(--bs-card-bg);
+    padding-right: 50px;
+}

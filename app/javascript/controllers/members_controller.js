@@ -4,8 +4,6 @@ import autoComplete from 'autoComplete';
 // Connects to data-controller="members"
 export default class extends Controller {
   connect() {
-    console.log("Hello stimulus!")
-    console.log("creating autocomplete");
     this.createAutocomplete('spouse_auto');
     this.createAutocomplete('father_auto');
     this.createAutocomplete('mother_auto');   
@@ -15,7 +13,7 @@ export default class extends Controller {
     const autocomplete = new autoComplete({
         name: field,
         selector: `#${field}`,
-        wrapper: false,
+        wrapper: true,
         placeHolder: "Search for member...",
         data: {
             src: async (query) => {

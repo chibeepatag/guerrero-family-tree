@@ -11,7 +11,7 @@ export default class extends Controller {
     const autocomplete = new autoComplete({
         name: 'members-search',
         selector: '#members-search',
-        wrapper: false,
+        wrapper: true,
         placeHolder: "Search for member...",
         data: {
             src: async (query) => {
