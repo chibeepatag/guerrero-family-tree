@@ -19,5 +19,4 @@ pin "ev-emitter", to: "https://ga.jspm.io/npm:ev-emitter@1.1.1/ev-emitter.js"
 pin "fizzy-ui-utils", to: "https://ga.jspm.io/npm:fizzy-ui-utils@2.0.7/utils.js"
 pin "get-size", to: "https://ga.jspm.io/npm:get-size@2.0.3/get-size.js"
 pin "outlayer", to: "https://ga.jspm.io/npm:outlayer@2.1.1/outlayer.js"
-
 pin "boxicons", to: "https://ga.jspm.io/npm:boxicons@2.1.4/dist/boxicons.js"
