@@ -28,7 +28,7 @@ class MembersController < ApplicationController
 
   # GET /members/new
   def new
-    @member = Member.new
+    @member = Member.new(branch: 'Manuel')
     @members = Member.all
   end
 
