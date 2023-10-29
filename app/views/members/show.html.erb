@@ -33,7 +33,11 @@
                         </tr>
                         <tr>
                           <td>Spouse: </td>
-                          <td><%=@member&.spouse%></td>
+                          <%if @member.spouse%>
+                          <td><%=link_to @member&.spouse, member_path(@member&.spouse)%></td>
+                          <%else%>
+                          <td></td>
+                          <%end%>
                         </tr>
                         <tr>
                           <td>Spouse 2: </td>
