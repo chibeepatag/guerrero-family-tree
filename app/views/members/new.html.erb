@@ -11,7 +11,7 @@
           <div class="card-body">
             <div class="mb-3">
               <%= form.label :branch, "Branch", class: "form-label" %>
-              <%= select(:member, :branch, options_for_select([['Luis', 'Luis'], ['Alfredo', 'Alfredo'], ['Jose', 'Jose'], ['Fernando', 'Fernando'], ['Manuel', 'Manuel'], ['Rosa', 'Rosa']]), {}, class: "form-select") %>
+              <%= select(:member, :branch, options_for_select([['Luis', 'Luis'], ['Alfredo', 'Alfredo'], ['Jose', 'Jose'], ['Fernando', 'Fernando'], ['Manuel', 'Manuel'], ['Rosa', 'Rosa']], selected: @member.branch), {}, class: "form-select") %>
             </div>
             <div class="mb-3">
               <%= form.label :name, "Name",  class: "form-label" %>
