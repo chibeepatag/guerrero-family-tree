@@ -140,7 +140,7 @@ export default class extends Controller {
                         padding: 20
                    });
                   },
-                  layout: 'landscape'
+                  layout: 'portrait'
               }
           },
           orientation: FamilyTree.orientation.left,     
