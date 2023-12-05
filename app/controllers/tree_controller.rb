@@ -1,15 +1,18 @@
 class TreeController < ApplicationController
   
   def show
-    if params[:parent_id].present?
+    if params[:parent_id].present? && params[:gen].present?
       parent1 = Member.find params[:parent_id]
       parent2 = parent1.spouse
-      @members = [parent1, parent2].concat(parent1.descendants).flatten
-      @members.filter! do |member|
-        member.generation(parent1) <= params[:gen].to_i
-      end
+      @members = [parent1, parent2]
+      @members = @members.concat(parent1.decendants_up_to(params[:gen].to_i)).flatten
+    elsif params[:parent_id].present?
+      parent1 = Member.find params[:parent_id]
+      parent2 = parent1.spouse
+      @members = [parent1, parent2]
+      @members = @members.concat(parent1.descendants).flatten
     else
-      @members = Member.all.order(:birth_order)
+      @members = Member.all
     end
   end
 
