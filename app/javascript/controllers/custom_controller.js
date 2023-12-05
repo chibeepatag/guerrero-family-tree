@@ -3,7 +3,7 @@ import autoComplete from 'autoComplete';
 
 // Connects to data-controller="members"
 export default class extends Controller {
-  static targets = [ "branch" ]
+  static targets = [ "branch", "generation", "head" ]
   connect() {
     console.log('hello from stimulus!')
     this.createAutocomplete();
@@ -13,6 +13,14 @@ export default class extends Controller {
     const branch = branchElement.value
     console.log(`generating tree by branch ${branch}`)
     window.location = `/tree/branch/${branch}`
+  }
+  treeByHead(){
+    const generationElement = this.generationTarget;
+    const generation = generationElement.value
+    const headElement = this.headTarget
+    const head = headElement.value
+    console.log(generation, head)
+    window.location = `/tree?parent_id=${head}&gen=${generation}`
   }
   createAutocomplete(){
     const autocomplete = new autoComplete({

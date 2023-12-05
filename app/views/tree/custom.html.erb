@@ -44,7 +44,7 @@
                 <label for="head" class="col-form-label">Head</label>
               </div>
               <div class="col">
-                <input type="text" id="head" class="form-control"><input type="hidden" id="member_id"/>
+                <input type="text" id="head" class="form-control"><input type="hidden" id="member_id" data-custom-target="head"/>
               </div>
             </div>
             <div class="row mb-3">
@@ -52,12 +52,12 @@
                 <label for="generation_count" class="col-form-label">Generation Count</label>
               </div>
               <div class="col">
-                <input type="number" id="generation_count" class="form-control">                
+                <input type="number" id="generation_count" class="form-control" data-custom-target="generation">
               </div>
             </div>
         </div>
         <div class="card-footer text-end">
-          <a href="#" class="btn btn-primary">Generate</a>
+          <a href="#" class="btn btn-primary" data-action="click->custom#treeByHead">Generate</a>
         </div>
       </div>      
     </div>
