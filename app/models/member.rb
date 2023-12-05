@@ -16,6 +16,21 @@ class Member < ApplicationRecord
     results.flatten.compact
   end
 
+  def generation(head)
+    return 1 if self == head
+    i = 2
+    current = in_law ? self.spouse : self
+    parent_is_head = -> do
+      current.mother == head || current.father == head
+    end
+
+    while !parent_is_head.call && (current != head)
+      i+=1
+      current = current.mother.in_law ? current.father : current.mother
+    end
+    i
+  end
+
   def to_s
     name
   end
