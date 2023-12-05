@@ -1,9 +1,26 @@
-
-
-<div class="container" data-controller="custom">
-  <div class="row">
-    <h1>Custom Tree</h1>
+<div class="content-wrapper">
+  <div class="container-xxl flex-grow-1 container-p-y">
+<h4 class="py-3 mb-4"><span class="text-muted fw-light"><%=Rails.configuration.family_name%> /</span> Family Members</h4>
+<div class="row">
+  <div class="col-md-6">
+    <ul class="nav nav-pills flex-column flex-md-row mb-3">
+      <li class="nav-item">
+        <%= link_to "Home", root_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Tree", tree_path, class: nav_classes('custom') %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Members", members_path, class: nav_classes('index') %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "New Member", new_member_path, class: nav_classes('new') %>
+      </li>
+    </ul>
   </div>
+</div>
+<div class="container" data-controller="custom">
+  <div class="row"></div>
   <div class="row">
     <div class="col">
       <div class="card">
@@ -45,5 +62,6 @@
       </div>      
     </div>
   </div>
-
+</div>
+</div>
 </div>
