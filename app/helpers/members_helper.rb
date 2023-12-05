@@ -43,6 +43,14 @@ module MembersHelper
     end
   end
 
+  def partners member
+    if member.spouse.nil?
+      "[]"
+    else
+      "[#{member.spouse_id}, #{member.spouse2_id.nil? ? '' : member.spouse2_id}]"
+    end
+  end
+
   def branch_badge branch
     class_ = case branch
     when "Luis"
