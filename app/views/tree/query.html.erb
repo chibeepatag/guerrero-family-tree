@@ -1,0 +1,49 @@
+
+
+<div class="container ">
+  <div class="row">
+    <h1>Custom Tree</h1>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Tree By Branch</h5>
+          <p class="card-text">            
+            <%= select(:member, :branch, options_for_select([['Luis', 'Luis'], ['Alfredo', 'Alfredo'], ['Jose', 'Jose'], ['Fernando', 'Fernando'], ['Manuel', 'Manuel'], ['Rosa', 'Rosa']]), {}, class: "form-select") %>
+          </p>
+        </div>
+        <div class="card-footer text-end">
+          <a href="#" class="btn btn-primary">Generate</a>
+        </div>
+      </div>      
+    </div>
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Tree by Generation</h5>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="head" class="col-form-label">Head</label>
+              </div>
+              <div class="col">
+                <input type="text" id="head" class="form-control"><input type="hidden" id="member_id"/>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="generation_count" class="col-form-label">Generation Count</label>
+              </div>
+              <div class="col">
+                <input type="number" id="generation_count" class="form-control">                
+              </div>
+            </div>
+        </div>
+        <div class="card-footer text-end">
+          <a href="#" class="btn btn-primary">Generate</a>
+        </div>
+      </div>      
+    </div>
+  </div>
+
+</div>

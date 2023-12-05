@@ -18,4 +18,6 @@ class TreeController < ApplicationController
     end
   end
   
+  def query
+  end
 end
