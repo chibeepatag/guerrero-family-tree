@@ -5,7 +5,7 @@ class TreeController < ApplicationController
       parent1 = Member.find params[:parent_id]
       parent2 = parent1.spouse
       @members = [parent1, parent2]
-      @members = @members.concat(parent1.decendants_up_to(params[:gen].to_i)).flatten
+      @members = @members.concat(parent1.descendants_up_to(params[:gen].to_i)).flatten
     elsif params[:parent_id].present?
       parent1 = Member.find params[:parent_id]
       parent2 = parent1.spouse

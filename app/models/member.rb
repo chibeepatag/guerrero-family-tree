@@ -13,20 +13,19 @@ class Member < ApplicationRecord
       results << child.spouse
       results << child.descendants
     end
-    results.flatten.compact
+    results.flatten.compact.uniq
   end
 
-  def decendants_up_to generation_no
-    results = []
-    return if generation_no < 2
-    children = Member.where(mother_id: id).or(Member.where(father_id: id)).order(:birth_order)
-    return children if generation_no == 2
+  def descendants_up_to generation_no_
+    return if generation_no_ < 2
+    children = Member.where(mother_id: id).or(Member.where(father_id: id)).and(Member.where("generation_no <= ?", generation_no_)).order(:birth_order)
+    results = children.to_a
     children.each do |child|
       results << child
       results << child.spouse
-      results << child.decendants_up_to(2)
+      results << child.descendants_up_to(generation_no_)
     end
-    results.flatten.compact
+    results.flatten.compact.uniq
   end
 
   def generation(head)
