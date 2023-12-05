@@ -5,6 +5,9 @@ class TreeController < ApplicationController
       parent1 = Member.find params[:parent_id]
       parent2 = parent1.spouse
       @members = [parent1, parent2].concat(parent1.descendants).flatten
+      @members.filter! do |member|
+        member.generation(parent1) <= params[:gen].to_i
+      end
     else
       @members = Member.all.order(:birth_order)
     end
