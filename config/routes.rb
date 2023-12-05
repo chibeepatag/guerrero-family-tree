@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     get 'descendants', on: :member
   end  
   get 'tree', to: 'tree#show'
-  get 'tree/query', to: 'tree#query'
+  get 'tree/custom', to: 'tree#custom'
   get 'tree/branch/:branch_name', to: 'tree#branch'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

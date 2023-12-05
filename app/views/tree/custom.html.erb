@@ -1,6 +1,6 @@
 
 
-<div class="container ">
+<div class="container" data-controller="custom">
   <div class="row">
     <h1>Custom Tree</h1>
   </div>
@@ -10,11 +10,11 @@
         <div class="card-body">
           <h5 class="card-title">Tree By Branch</h5>
           <p class="card-text">            
-            <%= select(:member, :branch, options_for_select([['Luis', 'Luis'], ['Alfredo', 'Alfredo'], ['Jose', 'Jose'], ['Fernando', 'Fernando'], ['Manuel', 'Manuel'], ['Rosa', 'Rosa']]), {}, class: "form-select") %>
+            <%= select(:member, :branch, options_for_select([['Luis', 'Luis'], ['Alfredo', 'Alfredo'], ['Jose', 'Jose'], ['Fernando', 'Fernando'], ['Manuel', 'Manuel'], ['Rosa', 'Rosa']]), {}, class: "form-select", "data-custom-target" =>"branch") %>
           </p>
         </div>
         <div class="card-footer text-end">
-          <a href="#" class="btn btn-primary">Generate</a>
+          <a href="#" class="btn btn-primary" id="gen_branch" data-action="click->custom#treeByBranch">Generate</a>
         </div>
       </div>      
     </div>
