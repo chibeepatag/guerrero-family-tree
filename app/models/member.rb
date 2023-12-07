@@ -17,15 +17,19 @@ class Member < ApplicationRecord
   end
 
   def descendants_up_to generation_no_
-    return if generation_no_ < 2
-    children = Member.where(mother_id: id).or(Member.where(father_id: id)).and(Member.where("generation_no <= ?", generation_no_)).order(:birth_order)
-    results = children.to_a
-    children.each do |child|
-      results << child
-      results << child.spouse
-      results << child.descendants_up_to(generation_no_)
-    end
-    results.flatten.compact.uniq
+    #TODO
+  end
+
+  def children_of member
+    member.children
+  end
+
+  def children
+    Member.where(mother_id: id).or(Member.where(father_id: id)).order(:birth_order)
+  end
+
+  def siblings
+    Member.where.not(id: id).and(Member.where(mother_id: mother.id).or(Member.where(father_id: father.id)))
   end
 
   def generation(head)
