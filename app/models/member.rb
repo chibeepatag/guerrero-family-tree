@@ -32,6 +32,10 @@ class Member < ApplicationRecord
     Member.where.not(id: id).and(Member.where(mother_id: mother.id).or(Member.where(father_id: father.id)))
   end
 
+  def spouses
+    Member.where(spouse_id: id)
+  end
+
   def generation(head)
     return 1 if (self == head || self == head.spouse)
     i = 2
@@ -50,4 +54,33 @@ class Member < ApplicationRecord
   def to_s
     name
   end
+
+  def tree
+    root_node = Tree::TreeNode.new(name, self)
+    build = -> current_node do
+      current_node.content.children.each do |child|
+        child_node = Tree::TreeNode.new(child.name, child)
+        current_node << child_node
+        build.call(child_node)
+      end
+    end
+    build.call(root_node)
+    root_node
+  end
+
+  # generation count begins with the root
+  def limited_tree generation_count
+    generation_count -= 1
+    root_node = Tree::TreeNode.new(name, self)
+    build = ->(current_node, current_generation) do
+      current_node.content.children.each do |child|
+        child_node = Tree::TreeNode.new(child.name, child)
+        current_node << child_node
+        build.call(child_node, (current_generation-1)) if current_generation >= 2
+      end
+    end
+    build.call(root_node, generation_count)
+    root_node
+  end
+
 end
