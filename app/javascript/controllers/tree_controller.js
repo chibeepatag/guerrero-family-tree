@@ -76,7 +76,7 @@ export default class extends Controller {
               csv: { text: "Export CSV" },
               json: { text: "Export JSON" },
               export_pdf: {
-                  text: "Export PDF A4",
+                  text: "PDF A4 Preview",
                   icon: FamilyTree.icon.pdf(24, 24, "#7A7A7A"),
                   onClick: () => {
                     FamilyTree.pdfPrevUI.show(family, {
