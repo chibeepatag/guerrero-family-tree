@@ -16,8 +16,14 @@ class Member < ApplicationRecord
     results.flatten.compact.uniq
   end
 
-  def descendants_up_to generation_no_
-    #TODO
+  def descendants_up_to generation_count
+    tree = limited_tree(generation_count)
+    results = []
+    tree.breadth_each do |node|
+      results << node.content
+      results << node.content.spouses
+    end
+    results.flatten.compact.uniq
   end
 
   def children_of member
