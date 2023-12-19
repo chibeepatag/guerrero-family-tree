@@ -18,12 +18,13 @@
               <th>Death</th>
               <th>Parents</th>
               <th>Spouse</th>
-              <th class="d-print-none">Actions</th>
             </tr>
           </thead>
           <tbody class="table-border-bottom-0">
+            <%= render("member_list_item", member: @spouse) unless @spouse.nil?%>
+            <%= render("member_list_item", member: @spouse2) unless @spouse2.nil?%>
             <% @descendants.each do |member| %>
-            <%= render member %>
+            <%= render "member_list_item", member: member %>
             <%end%>  
           </tbody>
         </table>

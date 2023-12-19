@@ -71,4 +71,9 @@ module MembersHelper
     class_.concat(" d-print-block")
     content_tag(:span, branch, class: class_)
   end
+
+  def id_name member
+    return if member.nil?
+    "#{member.id}: #{member.name}"
+  end
 end
