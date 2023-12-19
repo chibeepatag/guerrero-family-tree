@@ -69,3 +69,12 @@
     background-color: var(--bs-card-bg);
     padding-right: 50px;
 }
+@media print {   
+    footer { 
+        position: fixed; 
+        bottom: 10; 
+        left: 0; 
+        right: 0; 
+        height: 10px; 
+    } 
+} 

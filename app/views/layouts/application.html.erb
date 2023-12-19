@@ -12,5 +12,13 @@
 
   <body>
     <%= yield %>
+    <%if @footer%>
+    <footer>
+      <div class="row">
+        <div class="col-auto me-auto"><%=@member.branch%></div>
+        <div class="col-auto"><%=@member.name%></div>
+      </div>
+    </footer>
+    <%end%>
   </body>
 </html>

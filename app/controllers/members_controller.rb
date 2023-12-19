@@ -79,7 +79,11 @@ class MembersController < ApplicationController
     @spouse = @member.spouse
     @spouse2 = @member.spouse2
     @descendants = @member.descendants
-    render "list" if params[:list].present?
+    
+    if params[:list].present?
+      @footer = true
+      render "list" 
+    end
   end
 
   private
