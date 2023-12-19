@@ -1,5 +1,5 @@
 class MembersController < ApplicationController
-  before_action :set_member, only: %i[ show edit update destroy descendants]
+  before_action :set_member, only: %i[ show edit update destroy descendants head_descendants_limited]
 
   # GET /members or /members.json
   def index
@@ -84,6 +84,15 @@ class MembersController < ApplicationController
       @footer = true
       render "list" 
     end
+  end
+
+  def head_descendants_limited
+    @spouse = @member.spouse
+    @spouse2 = @member.spouse2
+    @descendants = @member.descendants.delete_if do |member|
+      member.generation_no > 4
+    end
+    @footer = true
   end
 
   private

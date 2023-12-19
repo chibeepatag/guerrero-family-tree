@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :members do
     get 'search', on: :collection 
     get 'descendants', on: :member
+    get 'head_descendants_limited', on: :member
   end  
   get 'tree', to: 'tree#show'
   get 'tree/custom', to: 'tree#custom'

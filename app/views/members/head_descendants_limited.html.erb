@@ -1,0 +1,35 @@
+<div class="content-wrapper">
+  <div class="container-xxl flex-grow-1 container-p-y">
+    <p class="d-print-none" style="color: green"><%= notice %></p>
+    <div class="card">
+      <div class="card-header">        
+        <div class="row">
+          <div class="pb-2"><a href="" class="float-end d-print-none" onclick="window.print();return false;">Print</a></div>
+        </div>
+        <h1><%=@member.name%><span class="float-end"><%=branch_badge(@member.branch)%></span></h1>
+      </div>
+      <div class="table-responsive text-nowrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Birth</th>
+              <th>Death</th>
+              <th>Parents</th>
+              <th>Spouse</th>
+              <th>Branch</th>
+            </tr>
+          </thead>
+          <tbody class="table-border-bottom-0">
+            <%= render("member_list_item_branch", member: @spouse) unless @spouse.nil?%>
+            <%= render("member_list_item_branch", member: @spouse2) unless @spouse2.nil?%>
+            <% @descendants.each do |member| %>
+            <%= render "member_list_item_branch", member: member %>
+            <%end%>  
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
