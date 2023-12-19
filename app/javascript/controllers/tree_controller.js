@@ -19,7 +19,7 @@ export default class extends Controller {
     
     FamilyTree.templates.red = Object.assign({}, FamilyTree.templates.tommy);
     FamilyTree.templates.red.size = [350, 90]; 
-    FamilyTree.templates.red.field_0 = '<text  data-text-overflow="ellipsis" style="font-size: 15px; font-weight: bold" fill="#222831" x="150" y="37" text-anchor="middle">{val}</text>'
+    FamilyTree.templates.red.field_0 = '<text  data-text-overflow="ellipsis" style="font-size: 20px; font-weight: bold" fill="#222831" x="150" y="37" text-anchor="middle">{val}</text>'
     FamilyTree.templates.red.field_1 = '<text  data-text-overflow="ellipsis" style="font-size: 15px;" fill="#222831" x="130" y="57" text-anchor="middle">{val}</text>';
     FamilyTree.templates.red.field_2 = '<text  data-text-overflow="ellipsis" style="font-size: 15px;" fill="#222831" x="40" y="20" text-anchor="middle">{val}</text>';
     FamilyTree.templates.red.field_3 = '<text  data-text-overflow="ellipsis" style="font-size: 15px;" fill="#222831" x="70" y="80" text-anchor="middle">YOB: {val}</text>';
