@@ -1,9 +1,9 @@
 <div class="content-wrapper">
   <div class="container-xxl flex-grow-1 container-p-y">
     <%=render "nav_bar", locals: {page: "index"}%>
-    <p style="color: green"><%= notice %></p>
+    <p class="d-print-none" style="color: green"><%= notice %></p>
     <div class="card">
-      <div class="card-header"></div>
+      <div class="card-header"><a href="" class="float-end d-print-none" onclick="window.print();return false;">Print</a></div>
       <div class="table-responsive text-nowrap">
         <table class="table">
           <thead>
@@ -14,7 +14,7 @@
               <th>Death</th>
               <th>Parents</th>
               <th>Spouse</th>
-              <th>Actions</th>
+              <th class="d-print-none">Actions</th>
             </tr>
           </thead>
           <tbody class="table-border-bottom-0">

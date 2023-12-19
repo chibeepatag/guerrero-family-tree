@@ -5,7 +5,7 @@
 <td><%=member.death%></td>
 <td><%=truncated_name(member.father&.name)%><br/><%=truncated_name(member.mother&.name)%></td>
 <td><%=truncated_name(member.spouse&.name)%><br/><%=truncated_name(spouse2(member))%></td>
-<td><%=edit_link(member)%>&nbsp;|&nbsp;<%= link_to "Destroy", member_path(member), data: { turbo_method: :delete, turbo_confirm: "Delete (#{member.name}) Are you sure?" } %></td>
+<td class="d-print-none"><%=edit_link(member)%>&nbsp;|&nbsp;<%= link_to "Destroy", member_path(member), data: { turbo_method: :delete, turbo_confirm: "Delete (#{member.name}) Are you sure?" } %></td>
 </tr>
            
             
