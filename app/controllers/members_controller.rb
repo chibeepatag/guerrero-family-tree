@@ -79,6 +79,7 @@ class MembersController < ApplicationController
     @spouse = @member.spouse
     @spouse2 = @member.spouse2
     @descendants = @member.descendants
+    render "list" if params[:list].present?
   end
 
   private

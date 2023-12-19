@@ -67,8 +67,8 @@ module MembersHelper
       "badge bg-label-manuel"
     when "Leon"
       "badge bg-label-leon"
-    
     end
+    class_.concat(" d-print-block")
     content_tag(:span, branch, class: class_)
   end
 end
