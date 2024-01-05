@@ -3,6 +3,8 @@ class MembersController < ApplicationController
 
   # GET /members or /members.json
   def index
+    @code = params[:admin]
+    @show_delete =  Rails.configuration.admin_code.eql?(@code)
     if params[:branch].present?
       @members = Member.where(branch: params[:branch])
       @list_title = "#{params[:branch]}"
