@@ -17,6 +17,7 @@ class TreeController < ApplicationController
   end
 
   def branch
+    redirect_to(action: :show) if params[:branch_name].eql?('Full')
     branch_name = params[:branch_name]
     @members = Member.where(branch: branch_name)#.order(:birth_order)
     if "Leon".eql? branch_name
